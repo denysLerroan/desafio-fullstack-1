@@ -33,9 +33,12 @@ public class Pessoas {
 	@Column(name = "nacionalidade")
 	private String nacionalidade;
 	
+	public Pessoas() {
+		
+	}
+	
 	public Pessoas(Integer id, String nome, Date nascimento, SexoEnum sexo, Double peso, Double altura,
 			String nacionalidade) {
-		super();
 		this.id = id;
 		this.nome = nome;
 		this.nascimento = nascimento;

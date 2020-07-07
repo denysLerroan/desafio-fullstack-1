@@ -5,7 +5,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import com.dlerroan.desafio.entity.Pessoas;
 
-@RepositoryRestResource
+@RepositoryRestResource(collectionResourceRel = "pessoas", path = "pessoas")
 public interface PessoasRepository extends JpaRepository<Pessoas, Integer>{
 
 }
