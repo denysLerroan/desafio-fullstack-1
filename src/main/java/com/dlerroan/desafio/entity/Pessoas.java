@@ -6,6 +6,7 @@ import javax.persistence.*;
 
 import com.dlerroan.desafio.enums.SexoEnum;
 
+
 @Entity
 @Table(name = "pessoas")
 public class Pessoas {
