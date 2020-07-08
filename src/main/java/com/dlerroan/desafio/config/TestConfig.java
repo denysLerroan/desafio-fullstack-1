@@ -1,6 +1,6 @@
 package com.dlerroan.desafio.config;
 
-import java.util.Date;
+import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -18,9 +18,10 @@ public class TestConfig implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		
-		Pessoas pessoa1 = new Pessoas(null, "Denys", new Date(), null, 70.8, 1.75, "Brasileiro"); 
+		Pessoas pessoa1 = new Pessoas(null, "Denys", 70.3, 1.75, "Brasileiro");
+		Pessoas pessoa2 = new Pessoas(null, "Mayara", 52.3, 1.25, "Mexicana");
 		
-		pessoasRepository.save(pessoa1);
+		pessoasRepository.saveAll(Arrays.asList(pessoa1, pessoa2));
 		
 	}
 }

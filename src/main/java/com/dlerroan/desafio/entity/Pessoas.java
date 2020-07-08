@@ -1,29 +1,25 @@
 package com.dlerroan.desafio.entity;
 
-import java.util.Date;
-
-import javax.persistence.*;
-
-import com.dlerroan.desafio.enums.SexoEnum;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "pessoas")
+@Table(name = "dados")
 public class Pessoas {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
-	private Integer id;
+	private Long id;
 	
 	@Column(name = "nome")
 	private String nome;
 	
-	@Column(name = "nascimento")
-	private Date nascimento;
-	
-	@Column(name = "sexo")
-	private SexoEnum sexo;
 	
 	@Column(name = "peso")
 	private Double peso;
@@ -38,22 +34,20 @@ public class Pessoas {
 		
 	}
 	
-	public Pessoas(Integer id, String nome, Date nascimento, SexoEnum sexo, Double peso, Double altura,
+	public Pessoas(Long id, String nome, Double peso, Double altura,
 			String nacionalidade) {
 		this.id = id;
 		this.nome = nome;
-		this.nascimento = nascimento;
-		this.sexo = sexo;
 		this.peso = peso;
 		this.altura = altura;
 		this.nacionalidade = nacionalidade;
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -63,22 +57,6 @@ public class Pessoas {
 
 	public void setNome(String nome) {
 		this.nome = nome;
-	}
-
-	public Date getNascimento() {
-		return nascimento;
-	}
-
-	public void setNascimento(Date nascimento) {
-		this.nascimento = nascimento;
-	}
-
-	public SexoEnum getSexo() {
-		return sexo;
-	}
-
-	public void setSexo(SexoEnum sexo) {
-		this.sexo = sexo;
 	}
 
 	public Double getPeso() {
